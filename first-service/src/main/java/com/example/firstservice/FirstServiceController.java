@@ -19,19 +19,19 @@ public class FirstServiceController {
     Environment env;
 
     @Autowired
-    public FirstServiceController(Environment env){
-        this.env= env;
+    public FirstServiceController(Environment env) {
+        this.env = env;
     }
 
     @GetMapping("/welcome")
-    public String welcome(){
+    public String welcome() {
         return "Welcome to the First service";
     }
 
     @GetMapping("message")
-    public String message(@RequestHeader("first-request") String header){
-      log.info(header);
-      return "Hello World in First Service.";
+    public String message(@RequestHeader("first-request") String header) {
+        log.info(header);
+        return "Hello World in First Service.";
     }
 
     @GetMapping("/check")

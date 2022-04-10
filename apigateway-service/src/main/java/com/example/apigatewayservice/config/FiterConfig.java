@@ -10,15 +10,15 @@ public class FiterConfig {
 
     // 라우터 정보 등록 -1
 //    @Bean
-    public RouteLocator gatewayRoutes(RouteLocatorBuilder builder){
+    public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route( r -> r.path("/first-service/**")
-                             .filters(f -> f.addRequestHeader("first-request", "first-request-header")
-                                             .addResponseHeader("first-response","first-response-header"))
-                             .uri("http://localhost:8081"))
-                .route( r -> r.path("/second-service/**")
+                .route(r -> r.path("/first-service/**")
+                        .filters(f -> f.addRequestHeader("first-request", "first-request-header")
+                                .addResponseHeader("first-response", "first-response-header"))
+                        .uri("http://localhost:8081"))
+                .route(r -> r.path("/second-service/**")
                         .filters(f -> f.addRequestHeader("second-request", "second-request-header")
-                                .addResponseHeader("second-response","second-response-header"))
+                                .addResponseHeader("second-response", "second-response-header"))
                         .uri("http://localhost:8082"))
                 .build();
     }

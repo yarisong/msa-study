@@ -14,14 +14,14 @@ import reactor.core.publisher.Mono;
 public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Config> {
 
     @Data
-    public static class Config{
+    public static class Config {
         // Put the configuration information
         private String baseMessage;
         private boolean preLogger;
         private boolean postLogger;
     }
 
-    public GlobalFilter(){
+    public GlobalFilter() {
         super(Config.class);
     }
 
@@ -34,15 +34,15 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Conf
             ServerHttpRequest request = exchange.getRequest();
             ServerHttpResponse response = exchange.getResponse();
 
-            log.info("Global Filter baseMessage : {}",  config.getBaseMessage());
+            log.info("Global Filter baseMessage : {}", config.getBaseMessage());
 
-            if(config.isPreLogger()){
-                log.info("Global Filter Start: request id -> {}",  request.getId());
+            if (config.isPreLogger()) {
+                log.info("Global Filter Start: request id -> {}", request.getId());
             }
             //Global Post Filter
             return chain.filter(exchange).then(Mono.fromRunnable(() -> {
 
-                if(config.isPostLogger()) {
+                if (config.isPostLogger()) {
                     log.info("Global Filter : response code -> {}", response.getStatusCode());
                 }
             }));

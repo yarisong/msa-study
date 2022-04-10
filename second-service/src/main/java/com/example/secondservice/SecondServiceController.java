@@ -18,17 +18,17 @@ public class SecondServiceController {
     Environment env;
 
     @Autowired
-    public FirstServiceController(Environment env){
-        this.env= env;
+    public FirstServiceController(Environment env) {
+        this.env = env;
     }
 
     @GetMapping("/welcome")
-    public String welcome(){
+    public String welcome() {
         return "Welcome to the Second service";
     }
 
     @GetMapping("message")
-    public String message(@RequestHeader("second-request") String header){
+    public String message(@RequestHeader("second-request") String header) {
         log.info(header);
         return "Hello World in Second Service..";
     }
@@ -37,7 +37,7 @@ public class SecondServiceController {
     public String check(HttpServletRequest request) {
         log.info("server por={}", request.getServerPort());
 
-        return return String.format( "Hi, there. This is a message from Second Service on Port %s"
+        return return String.format("Hi, there. This is a message from Second Service on Port %s"
                 , env.getProperty("local.server.port"));
     }
 }

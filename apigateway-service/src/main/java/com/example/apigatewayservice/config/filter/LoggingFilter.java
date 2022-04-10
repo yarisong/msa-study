@@ -15,14 +15,14 @@ import reactor.core.publisher.Mono;
 public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Config> {
 
     @Data
-    public static class Config{
+    public static class Config {
         // Put the configuration information
         private String baseMessage;
         private boolean preLogger;
         private boolean postLogger;
     }
 
-    public LoggingFilter(){
+    public LoggingFilter() {
         super(Config.class);
     }
 
@@ -30,19 +30,19 @@ public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Co
     public GatewayFilter apply(Config config) {
 
         // Logging Filter
-        GatewayFilter filter = new OrderedGatewayFilter((exchange, chain) ->{
+        GatewayFilter filter = new OrderedGatewayFilter((exchange, chain) -> {
             ServerHttpRequest request = exchange.getRequest();
             ServerHttpResponse response = exchange.getResponse();
 
-            log.info("Logging Filter baseMessage : {}",  config.getBaseMessage());
+            log.info("Logging Filter baseMessage : {}", config.getBaseMessage());
 
-            if(config.isPreLogger()){
-                log.info("Logging Pre Filter: request id -> {}",  request.getId());
+            if (config.isPreLogger()) {
+                log.info("Logging Pre Filter: request id -> {}", request.getId());
             }
             //Logging Post Filter
             return chain.filter(exchange).then(Mono.fromRunnable(() -> {
 
-                if(config.isPostLogger()) {
+                if (config.isPostLogger()) {
                     log.info("Logging Post Filter : response code -> {}", response.getStatusCode());
                 }
             }));

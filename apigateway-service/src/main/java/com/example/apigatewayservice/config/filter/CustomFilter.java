@@ -12,11 +12,11 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Config> {
 
-    public static class Config{
+    public static class Config {
         // Put the configuration information
     }
 
-    public CustomFilter(){
+    public CustomFilter() {
         super(Config.class);
     }
 
@@ -29,11 +29,11 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
             ServerHttpRequest request = exchange.getRequest();
             ServerHttpResponse response = exchange.getResponse();
 
-            log.info("Custom Pre Filter : request id -> {}",  request.getId());
+            log.info("Custom Pre Filter : request id -> {}", request.getId());
 
             //Custom Post Filter
             return chain.filter(exchange).then(Mono.fromRunnable(() -> {
-               log.info("Custom Post Filter : response code -> {}",  response.getStatusCode());
+                log.info("Custom Post Filter : response code -> {}", response.getStatusCode());
             }));
         };
     }
