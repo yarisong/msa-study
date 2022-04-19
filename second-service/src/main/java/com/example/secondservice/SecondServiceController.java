@@ -18,7 +18,7 @@ public class SecondServiceController {
     Environment env;
 
     @Autowired
-    public FirstServiceController(Environment env) {
+    public SecondServiceController(Environment env) {
         this.env = env;
     }
 
@@ -37,7 +37,7 @@ public class SecondServiceController {
     public String check(HttpServletRequest request) {
         log.info("server por={}", request.getServerPort());
 
-        return return String.format("Hi, there. This is a message from Second Service on Port %s"
+        return String.format("Hi, there. This is a message from Second Service on Port %s"
                 , env.getProperty("local.server.port"));
     }
 }
