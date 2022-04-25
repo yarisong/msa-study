@@ -22,16 +22,16 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     public WebSecurity(Environment env, UserService userService, BCryptPasswordEncoder bCryptPasswordEncoder){
         this.env = env;
         this.userService = userService;
-        this.bCryptPasswordEncoder =bCryptPasswordEncoder
+        this.bCryptPasswordEncoder =bCryptPasswordEncoder;
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
 //        http.authorizeRequests().antMatchers(".users/**").permitAll();
-
         http.authorizeRequests().antMatchers("/**")
-                .hasIpAddress("10.50.2.175")
+//                .hasIpAddress("10.50.2.175")
+                .hasIpAddress("192.168.219.100")
                 .and()
                 .addFilter(getAuthenticationFilter());
 
