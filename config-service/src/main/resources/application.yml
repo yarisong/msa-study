@@ -1,0 +1,12 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///Users/tjjeong/git/msa-study/
+          default-label: feature-config
