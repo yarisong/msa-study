@@ -8,5 +8,5 @@ spring:
     config:
       server:
         git:
-          uri: file:///Users/tjjeong/git/msa-study/
+          uri: file:///Users/tjjeong/git/msa-study
           default-label: feature-config
