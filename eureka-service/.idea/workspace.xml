@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d51a50c7-8fb0-4b37-a377-1696503eb1d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../apigateway-service/src/main/java/com/example/apigatewayservice/config/filter/AuthorizationHeaderFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apigateway-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../apigateway-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apigateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../apigateway-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/eureka/EurekaApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/eureka/EurekaApplicationTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-service/src/main/java/com/example/userservice/security/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/example/userservice/security/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-service/src/main/java/com/example/userservice/security/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/example/userservice/security/WebSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-service/src/main/java/com/example/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/example/userservice/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-service/src/main/java/com/example/userservice/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/example/userservice/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-service/src/main/java/com/example/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/example/userservice/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,6 +108,7 @@
       <workItem from="1650732658013" duration="2186000" />
       <workItem from="1650956666934" duration="926000" />
       <workItem from="1651072279621" duration="1241000" />
+      <workItem from="1651453600091" duration="133000" />
     </task>
     <servers />
   </component>
