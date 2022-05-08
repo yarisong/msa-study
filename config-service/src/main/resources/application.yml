@@ -4,9 +4,17 @@ server:
 spring:
   application:
     name: config-service
+  #config native 사용을 위한 설정 값
+  profiles:
+    active: native
   cloud:
     config:
+      #config native 사용을 위한 설정 값 
       server:
-        git:
-          uri: file:///Users/tjjeong/git/msa-study
-          default-label: feature-gateway
+        native:
+          search-locations: file:///Users/tjjeong/msa_study_config
+          #search-locations: file:///Users/tjjeong/msa_study_config ㅋ
+        #git:
+          #uri: file:///Users/tjjeong/git/msa-study
+          #uri: https://github.com/yarisong/msa-study #git hub url 
+          #default-label: feature-gateway
