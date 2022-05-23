@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: config-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   #config native 사용을 위한 설정 값
   profiles:
     active: native
@@ -18,3 +23,8 @@ spring:
           #uri: file:///Users/tjjeong/git/msa-study
           #uri: https://github.com/yarisong/msa-study #git hub url 
           #default-label: feature-gateway
+managemnet:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh
