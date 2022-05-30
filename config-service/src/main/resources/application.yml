@@ -17,7 +17,7 @@ spring:
       #config native 사용을 위한 설정 값 
       server:
         native:
-          search-locations: file:///Users/tjjeong/msa_study_config
+          search-locations: file://${user.home}/msa_study_config
           #search-locations: file:///Users/tjjeong/msa_study_config ㅋ
         #git:
           #uri: file:///Users/tjjeong/git/msa-study
